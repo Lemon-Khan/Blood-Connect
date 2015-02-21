@@ -1,141 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+ <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:background="@drawable/background2">
+    android:background="@drawable/background11">
+   
+  
     
     <TableLayout android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="35dp">
+    android:layout_marginLeft="14dp"
+    android:layout_marginRight="14dp"
+ 	>
     
-        <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="28sp"
-                android:textColor="#000000"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_marginBottom="27dp"
-                android:text="Patient Registration"/>
-         <TableRow>
-            <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textColor="#000000"
-                android:paddingLeft="5dp"
-                android:layout_gravity="center"
-                android:text="Govt.Id"/>
-            
-            <EditText android:layout_width="fill_parent"
+   <TextView android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:fontFamily="sans-serif-medium" 
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="5dp"
+                android:text="Patient Registration"
+                 />
+        <TableRow>
+            <TextView
+		        android:id="@+id/textView1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Govt. id"
+		        android:textColor="#FFFFFF"
+		        android:layout_marginLeft="5dp"
+		        
+		        android:textAppearance="?android:attr/textAppearanceSmall" /> 
+        </TableRow>
+        <TableRow>
+        	<EditText android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/login_edittext"
                 android:id="@+id/govt_id"/>
         </TableRow>
         <TableRow>
-            <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textColor="#000000"
-                android:paddingLeft="5dp"
-                android:layout_gravity="center"
-                android:text="Patient Name"/>
-            
-            <EditText android:layout_width="fill_parent"
+            <TextView
+		        android:id="@+id/textView2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Patient name"
+		        android:textColor="#FFFFFF"
+		        android:layout_marginLeft="5dp"
+		        
+		        android:textAppearance="?android:attr/textAppearanceSmall" />   
+        </TableRow>
+        <TableRow>
+        	 <EditText android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:background="@drawable/login_edittext"
+                android:layout_marginBottom="3dp"
                 android:id="@+id/patient_name"/>
         </TableRow>
-        
         <TableRow>
-            <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textColor="#000000"
-                android:paddingLeft="5dp"
-                android:layout_gravity="center"
-                android:text="Blood Group"/>
-            
+             <TextView
+		        android:id="@+id/textView3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Blood Group"
+		        android:textColor="#FFFFFF"
+		        android:layout_marginLeft="5dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall" />  
+        </TableRow>
+        <TableRow>         
             <Spinner android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:layout_marginBottom="3dp"
                 android:id="@+id/patient_blood_grp"/>
         </TableRow>
-        
         <TableRow>
-            <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textColor="#000000"
-                android:paddingLeft="5dp"
-                android:layout_gravity="center"
-                android:text="Disease"/>
-            
-            <EditText android:layout_width="fill_parent"
+             <TextView
+		        android:id="@+id/textView7"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Disease"
+		        android:textColor="#FFFFFF"
+		        android:layout_marginLeft="5dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall" />  
+        </TableRow>
+        <TableRow>         
+           <EditText android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:background="@drawable/login_edittext"
+                android:layout_marginBottom="3dp"
                 android:id="@+id/disease"/>
         </TableRow>
+        <TableRow>
+            <TextView
+		        android:id="@+id/textView4"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Contact no."
+		        android:textColor="#FFFFFF"
+		        android:layout_marginLeft="5dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall" /> 
+
+        </TableRow>
         
-         <TableRow>
-            <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textColor="#000000"
-				android:paddingLeft="5dp"
-                android:layout_gravity="center"
-                android:text="Contact no"/>
-            
+        <TableRow>            
             <EditText android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:background="@drawable/login_edittext"
+                android:layout_marginBottom="3dp"
                 android:id="@+id/contact_patient"/>
         </TableRow>
-        
         <TableRow>
-            <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textColor="#000000"
-                android:paddingLeft="5dp"
-                android:layout_gravity="center"
-                android:text="Address"/>
-            
+            <TextView
+		        android:id="@+id/textView5"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Address"
+		        android:textColor="#FFFFFF"
+		        android:layout_marginLeft="5dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall" /> 
+
+        </TableRow>
+        
+        <TableRow>            
             <EditText android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/login_edittext"
                 android:id="@+id/address_patient"/>
         </TableRow>
-        
          <TableRow>
-            <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:paddingLeft="5dp"
-                android:layout_gravity="center"
-                android:textColor="#000000"
-                android:text="City"/>
-            
+           <TextView
+		        android:id="@+id/textView6"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="City"
+		        android:textColor="#FFFFFF"
+		        android:layout_marginLeft="5dp"
+		        android:textAppearance="?android:attr/textAppearanceSmall" /> 
+
+        </TableRow>
+        
+         <TableRow>            
             <Spinner android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:id="@+id/patient_location"/>
         </TableRow>
-        
+        <TableRow>
+         <Button android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/add_patients"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/donor_submit_button" 
+                android:text="Submit"
+              />
+         </TableRow>
     </TableLayout>
     
-        <Button android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:id="@+id/add_patients"
-                android:layout_gravity="center"
-                android:text="Add Patient"
-              />
-</LinearLayout>
+</RelativeLayout>
+ </ScrollView>
