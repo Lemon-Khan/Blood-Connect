@@ -45,7 +45,7 @@ public class MainActivity extends Activity
 {
 	Button donor,sign,exit;
     boolean server_conn=false;
-    String url="http://169.254.80.80/blood/index_andro.php";
+    String url="192.168.46.1/proj/index_andro.php";
 	int timeout=30000;
 	
 	protected void onCreate(Bundle savedInstanceState)

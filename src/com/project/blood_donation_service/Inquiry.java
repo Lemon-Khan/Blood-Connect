@@ -279,7 +279,7 @@ public class Inquiry extends Activity
 				}
 				else
 				{
-					Toast.makeText(getApplicationContext(),"SORRY,Donor does not available.",Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(),"SORRY,Donor is not available.",Toast.LENGTH_LONG).show();
 				}
 			}
 			catch (JSONException e)
@@ -300,7 +300,7 @@ public class Inquiry extends Activity
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://169.254.80.80/blood/refined_availablity_andro.php");
+				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/refined_availablity_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

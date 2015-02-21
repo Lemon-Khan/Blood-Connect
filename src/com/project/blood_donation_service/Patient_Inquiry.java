@@ -211,7 +211,7 @@ public class Patient_Inquiry extends Activity
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://169.254.80.80/blood/existing_patient_before_validation_andro.php");
+				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_patient_before_validation_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

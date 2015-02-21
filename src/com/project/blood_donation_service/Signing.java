@@ -57,8 +57,8 @@ public class Signing extends Activity
 		log_in.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v)
 			{
-				String key_name=SHARING.getString("USERNAME","Your Session is end.");
-				String key_pass=SHARING.getString("PASSWORD","Your Session is end.");
+				String key_name=SHARING.getString("USERNAME","Your Session ended.");
+				String key_pass=SHARING.getString("PASSWORD","Your Session ended.");
 				
 				name=bank.getText().toString();
 			    pass=password.getText().toString();
@@ -183,7 +183,7 @@ public class Signing extends Activity
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://169.254.80.80/blood/loginpage_andro.php");
+				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/loginpage_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

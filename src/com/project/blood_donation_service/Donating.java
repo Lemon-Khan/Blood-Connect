@@ -217,11 +217,11 @@ public class Donating extends Activity implements OnFocusChangeListener
    				
    				if(code==-1)
    				{
-   					Toast.makeText(getApplicationContext(),"SORRY,this donor can not donor blood before 3 months.",Toast.LENGTH_LONG).show();
+   					Toast.makeText(getApplicationContext(),"SORRY,this donor can not donoate blood before 3 months.",Toast.LENGTH_LONG).show();
    				}
    				else if(code==0)
    				{
-   					Toast.makeText(getApplicationContext(),"SORRY,this donor does exist or registered yet.",Toast.LENGTH_LONG).show();
+   					Toast.makeText(getApplicationContext(),"SORRY,this donor hasn't registered yet.",Toast.LENGTH_LONG).show();
    				}
    				else
    				{
@@ -242,7 +242,7 @@ public class Donating extends Activity implements OnFocusChangeListener
    			try
    			{
    				HttpClient client=new DefaultHttpClient();
-   				HttpPost httpPost=new HttpPost("http://169.254.80.80/blood/existing_donor_check.php");
+   				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_donor_check.php");
    				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
    				HttpResponse response=client.execute(httpPost);
    				HttpEntity entity=response.getEntity();
@@ -313,7 +313,7 @@ public class Donating extends Activity implements OnFocusChangeListener
 				}
 				else
 				{
-					Toast.makeText(getApplicationContext(),"SORRY,this donor does exist or registered yet.",Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(),"SORRY,this donor hasn't registered yet.",Toast.LENGTH_LONG).show();
 				}
 			}
 			catch(Exception e)
@@ -330,7 +330,7 @@ public class Donating extends Activity implements OnFocusChangeListener
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://169.254.80.80/blood/existing_donor_availablity.php");
+				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_donor_availablity.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();
@@ -426,7 +426,7 @@ public class Donating extends Activity implements OnFocusChangeListener
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://169.254.80.80/blood/existing_donor_andro.php");
+				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_donor_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();
