@@ -164,7 +164,6 @@
          <Button android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="2dp"
                 android:id="@+id/add_patients"
                 android:textColor="#FFFFFF"
                 android:layout_marginBottom="8dp"
