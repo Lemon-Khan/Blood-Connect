@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.blood_donation_service"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name="com.project.blood_donation_service.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Options"
+            android:label="User Options" >
+            <intent-filter>
+                <action android:name="android.intent.action.OPTIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Donor"
+            android:label="Finding Donor" >
+            <intent-filter>
+                <action android:name="android.intent.action.DONOR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Signing"
+            android:label="Sign-In" >
+            <intent-filter>
+                <action android:name="android.intent.action.SIGNING" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Add_Donor"
+            android:label="Adding Donor" >
+            <intent-filter>
+                <action android:name="android.intent.action.ADD_DONOR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Add_Patient"
+            android:label="Adding Donor" >
+            <intent-filter>
+                <action android:name="android.intent.action.ADD_DONOR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Admin_Rights"
+            android:label="Admin Options" >
+            <intent-filter>
+                <action android:name="android.intent.action.ADMIN_RIGHTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Donating"
+            android:label="Donating" >
+            <intent-filter>
+                <action android:name="android.intent.action.DONATING" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Donor_Information"
+            android:label="Donating" >
+            <intent-filter>
+                <action android:name="android.intent.action.DONOR_INFORMATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.ExpandableListMain"
+            android:label="Donor List">
+            <intent-filter>
+                <action android:name="android.intent.action.DONOR_INFORMATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.project.blood_donation_service.Refined_Expand"
+            android:label="Donor List">
+            <intent-filter>
+                <action android:name="android.intent.action.DONOR_INFORMATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:name="com.project.blood_donation_service.Inquiry"
+            android:label="Inquiry" >
+            <intent-filter>
+                <action android:name="android.intent.action.INQUIRY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Patient_Inquiry"
+            android:label="Inquiry" >
+            <intent-filter>
+                <action android:name="android.intent.action.INQUIRY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Taken_Blood"
+            android:label="Taken Blood" >
+            <intent-filter>
+                <action android:name="android.intent.action.INQUIRY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.project.blood_donation_service.Refine"
+            android:label="Refining.." >
+            <intent-filter>
+                <action android:name="android.intent.action.REFINE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+    </application>
+
+</manifest>
