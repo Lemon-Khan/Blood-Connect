@@ -50,7 +50,7 @@ public class ExpandableListMain extends  ExpandableListActivity
 		bgroup=bundle.getString("BLOOD");
 		city=bundle.getString("CITY");
 	
-        setTitle("Donor searching for-Blood : "+bgroup+",City : "+city);
+        setTitle("Search Donor : "+bgroup+",City : "+city);
         
         // Set ExpandableListView values ***********
         getExpandableListView().setGroupIndicator(null);

@@ -3,50 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background2">
-    <TextView android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                
-                android:textSize="26sp"
-                android:textColor="#6F282A"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginTop="40dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="80dp"
-                android:text="Blood Donation Service"/>
+    android:background="@drawable/background12">
+   
     <Button
         android:id="@+id/donor"
-        
         android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:text="Find Donor"
-        android:textSize="18sp"
-        android:background="#D94B2F"
+        android:textSize="20sp"
+        android:layout_marginTop="70dp"
+        android:layout_height="100dp"
+        android:background="@drawable/first_option"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="4dp"
-        android:layout_gravity="center" />
+        android:text="Find Donor"
+        android:textStyle="bold"
+        
+        android:layout_gravity="center" 
+        />
 
-    <Button
+     <Button
         android:id="@+id/sign"
         android:layout_width="220dp"
+        android:textSize="20sp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/first_option"
+        android:textColor="#FFFFFF"
+        android:text="Sign In"
+        android:textStyle="bold"
+        android:layout_gravity="center" 
+        />
+
+   <Button
+        android:id="@+id/exit"
+        android:layout_width="150dp"
+        android:textSize="15sp"
+                android:layout_marginTop="50dp"
         
         android:layout_height="40dp"
-        android:text="Sign In"
-        android:textSize="18sp"
-        android:background="#D94B2F"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="80dp"
-        android:layout_gravity="center" />
-
-    <Button
-        android:id="@+id/exit"
-        android:layout_width="170dp"
-        android:textSize="15sp"
-        android:layout_height="30dp"
-        android:background="#540002"
+        android:background="@drawable/login_button"
         android:textColor="#FFFFFF"
         android:text="Exit"
+        android:textStyle="bold"
         android:layout_gravity="center" 
         />
 
