@@ -165,10 +165,11 @@ public class Patient_Inquiry extends Activity
 				int code=data.getInt("code");
 				int go=data.getInt("go");
 				int total=data.getInt("total_blood");
+				int dates=data.getInt("dates");
 				String blood_mark=data.getString("blood");
 				
 							
-				if(code==1 && go==1 && total<5)
+				if(code==1 && go==1 && total<5 && dates==1)
 				{
 					  Intent i=new Intent(Patient_Inquiry.this,Taken_Blood.class);
 					  Bundle bundle=new Bundle();
@@ -189,11 +190,15 @@ public class Patient_Inquiry extends Activity
 						m+="Doner is not registered.\n";
 					}
 					
+					if(dates==0)
+					{
+						m+="Sorry,You can't take blood before 2 months.\n"; 
+					}
 					if(total>5)
 					{
-					   m+="Sorry,Your blood limit will be crossed.\n";
+					   m+="Your blood limit will be crossed.Blood taken "+Integer.toString(total)+".\n";
 					}
-					message.setText(m);
+					 message.setText(m);
 				}
 			}
 			catch (JSONException e)
@@ -211,7 +216,7 @@ public class Patient_Inquiry extends Activity
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_patient_before_validation_andro.php");
+				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"existing_patient_before_validation_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

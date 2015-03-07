@@ -51,10 +51,6 @@ public class Refined_Expand  extends Activity
 		
 		setContentView(R.layout.refined_);
 		
-		//getExpandableListView().setGroupIndicator(null);
-        //getExpandableListView().setDividerHeight(2);
-        //registerForContextMenu(getExpandableListView());
-		
 		donor_list=(ExpandableListView)findViewById(R.id.expandable);
 		donor_list.setGroupIndicator(null);
 		donor_list.setDividerHeight(3);
@@ -150,8 +146,7 @@ public class Refined_Expand  extends Activity
 			       parents.add(obj_par);
 			       
 				}
-			loadHost();
-				
+			loadHost();	
 			}
 			catch (JSONException e)
 			{
@@ -169,7 +164,7 @@ public class Refined_Expand  extends Activity
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/donor_list_andro.php");
+				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"donor_list_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();
@@ -183,23 +178,7 @@ public class Refined_Expand  extends Activity
 	  }
 	public void loadHost()
 	{
-		/*if (this.getExpandableListAdapter() == null)
-        {
-             //Create ExpandableListAdapter Object
-            final MyExpandableListAdapter mAdapter = new MyExpandableListAdapter(parents,Refined_Expand.this);
-             
-            // Set Adapter to ExpandableList Adapter
-            this.setListAdapter(mAdapter);   
-        }
-        else
-        {
-             // Refresh ExpandableListView data 
-            ((MyExpandableListAdapter)getExpandableListAdapter()).notifyDataSetChanged();
-        }  */
 		final MyExpandableListAdapter mAdapter = new MyExpandableListAdapter(parents,Refined_Expand.this);
-        
-        // Set Adapter to ExpandableList Adapter
-        //this.setListAdapter(mAdapter);
         donor_list.setAdapter(mAdapter);
 	}
 

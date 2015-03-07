@@ -157,7 +157,7 @@ public class Refine  extends Activity
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/donor_list_andro.php");
+				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"donor_list_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

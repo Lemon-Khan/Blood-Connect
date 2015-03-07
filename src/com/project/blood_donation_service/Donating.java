@@ -242,7 +242,7 @@ public class Donating extends Activity implements OnFocusChangeListener
    			try
    			{
    				HttpClient client=new DefaultHttpClient();
-   				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_donor_check.php");
+   				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"existing_donor_check.php");
    				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
    				HttpResponse response=client.execute(httpPost);
    				HttpEntity entity=response.getEntity();
@@ -330,7 +330,7 @@ public class Donating extends Activity implements OnFocusChangeListener
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_donor_availablity.php");
+				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"existing_donor_availablity.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();
@@ -415,9 +415,6 @@ public class Donating extends Activity implements OnFocusChangeListener
 		public void INSERT_DATA()
 		{	
 			ArrayList<NameValuePair>pairs=new ArrayList<NameValuePair>();
-			//String _id=donor_id.getText().toString();
-			//String _bags=no_of_bags.getText().toString();
-			//String _date=date.getText().toString();
 			
 			pairs.add(new BasicNameValuePair("id",_id));
 			pairs.add(new BasicNameValuePair("bags",_bags));
@@ -426,7 +423,7 @@ public class Donating extends Activity implements OnFocusChangeListener
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_donor_andro.php");
+				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"existing_donor_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

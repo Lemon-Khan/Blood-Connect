@@ -40,7 +40,7 @@ public class Donor extends Activity
 	String blood_selected,city_selected;
 	String blood_list[]={"Select Blood Group","A+","B+","A-","B-","O+","O-","AB+","AB-"};
 	String city_list[]={"Select City",
-			"--Dhaka Division--",
+			"Dhaka Division",
 			"Dhaka",
             "Bhairab",
             "Faridpur",
@@ -58,7 +58,7 @@ public class Donor extends Activity
             "Tangail",
             "Tongi",
             "Gopalganj",
-            "--Barisal Division--", 
+            "Barisal Division", 
             "Barguna",
             "Bakerganj",
             "Bhola",
@@ -83,7 +83,7 @@ public class Donor extends Activity
             "Sandwip",
             "Comilla",
             "Burichong",
-			"--Khulna Division--",
+			"Khulna Division",
 			"Bagherhat",
             "Chuadanga",
             "Jessore",
@@ -93,7 +93,7 @@ public class Donor extends Activity
             "Meherpur",
          	"Narail",
             "Shatkhira",
-            "--Rajshahi Division--",
+            "Rajshahi Division",
             "Bogra",
             "Joypurhat",
             "Naogaon",
@@ -106,7 +106,7 @@ public class Donor extends Activity
             "Iswardi",
             "Santhia",
             "Sherpur",
-            "--Rangpur Division--",
+            "Rangpur Division",
 			"Saidpur",
             "Dinajpur",
             "Gaibandha",
@@ -116,7 +116,7 @@ public class Donor extends Activity
             "Nilphamari",
             "Panchagarh",
             "Thakurgaon",
-            "--Sylhet Division--",
+            "Sylhet Division",
             "Golapganj",
             "Habiganj",
             "Maulvibazar",
@@ -155,15 +155,15 @@ public class Donor extends Activity
 		  });
 	}
 	
-	protected void onPause()
-	{
-		super.onPause();
-		finish();
-	}
+	 /*public void onBackPressed()
+	   {
+		 Intent i=new Intent(Donor.this,MainActivity.class);
+	     startActivity(i);
+	   }*/
 
     public boolean validation()
     {
-    	if(blood_selected.equals("Select Blood Group") || (city_selected.equals("Select City")||city_selected.equals("--Dhaka Division--")||city_selected.equals("--Barisal Division--")||city_selected.equals("--Khulna Division--")||city_selected.equals("--Rajshahi Division--")||city_selected.equals("--Rangpur Division--")|| (city_selected.equals("--Sylhet Division--"))))
+    	if(blood_selected.equals("Select Blood Group") || (city_selected.equals("Select City")))
 		return false;
     	else
     	return true;
@@ -261,7 +261,7 @@ public class Donor extends Activity
 				}
 				else
 				{
-					Toast.makeText(getApplicationContext(),"SORRY,Donor is not available.",Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(),"SORRY,Donor does not available.",Toast.LENGTH_LONG).show();
 				}
 			}
 			catch (JSONException e)
@@ -280,7 +280,8 @@ public class Donor extends Activity
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/availablity_andro.php");
+				//HttpPost httpPost=new HttpPost("http://169.254.80.80/blood/availablity_andro.php");
+				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"availablity_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

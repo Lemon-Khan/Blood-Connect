@@ -82,6 +82,11 @@ public class Signing extends Activity
 			}
 		  });
 	}
+	/*public void onBackPressed()
+	   {
+		 Intent i=new Intent(Signing.this,MainActivity.class);
+	     startActivity(i);
+	   }*/
 	
 	public boolean validation()
     {
@@ -171,10 +176,7 @@ public class Signing extends Activity
 		}
 		public void INSERT_DATA()
 		{
-			//String name=bank.getText().toString();
-			//String pass =password.getText().toString();
 			String res="";
-			
 			ArrayList<NameValuePair>pairs=new ArrayList<NameValuePair>();
 			
 			pairs.add(new BasicNameValuePair("username",name));
@@ -183,7 +185,7 @@ public class Signing extends Activity
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/loginpage_andro.php");
+				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"loginpage_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

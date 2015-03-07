@@ -37,9 +37,8 @@ public class MainSplashScreen extends Activity {
     }
      
     @Override
-    protected void onDestroy() {
-         
+    protected void onDestroy()
+    { 
         super.onDestroy();
-         
     }
 }

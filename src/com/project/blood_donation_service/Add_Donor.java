@@ -38,13 +38,14 @@ import android.widget.AdapterView.OnItemSelectedListener;
 public class Add_Donor extends Activity
 {
 	EditText user_name,govt_id,contact,address;
-	Spinner blood_grp,location;
+	Spinner blood_grp,location,division;
 	Button add_donor;
 	int go=0;
 	SharedPreferences SHARING;
 	public static String fileName="BloodDonation";
-	String bank_username,donor_name,donor_govt_id,donor_blood,donor_contact,donor_add,donor_city;
+	String bank_username,donor_name,donor_govt_id,donor_blood,donor_contact,donor_add,donor_city,donor_div;
 	String blood_list[]={"Select Blood Group","A+","B+","A-","B-","O+","O-","AB+","AB-"};
+	String divs[]={"Select Division","Dhaka Division","Barisal Division","Khulna Division","Rajshahi Division","Rangpur Division","Sylhet Division"};
 	String city_list[]={"Select City",
 			"--Dhaka Division--",
 			"Dhaka",
@@ -64,7 +65,7 @@ public class Add_Donor extends Activity
             "Tangail",
             "Tongi",
             "Gopalganj",
-            "--Barisal Division--", 
+            "--Barisal Division--",
             "Barguna",
             "Bakerganj",
             "Bhola",
@@ -89,7 +90,7 @@ public class Add_Donor extends Activity
             "Sandwip",
             "Comilla",
             "Burichong",
-			"--Khulna Division--",
+            "--Khulna Division--",
 			"Bagherhat",
             "Chuadanga",
             "Jessore",
@@ -122,7 +123,7 @@ public class Add_Donor extends Activity
             "Nilphamari",
             "Panchagarh",
             "Thakurgaon",
-            "--Rangpur Division--",
+            "--Sylhet Division--",
             "Golapganj",
             "Habiganj",
             "Maulvibazar",
@@ -149,6 +150,7 @@ public class Add_Donor extends Activity
 		blood_grp=(Spinner)findViewById(R.id.donor_blood_grp);
 		location=(Spinner)findViewById(R.id.donor_location);
 		add_donor=(Button)findViewById(R.id.add_donor);
+		division=(Spinner)findViewById(R.id.donor_division);
 
 		ArrayAdapter<String>blood_=new ArrayAdapter<String>(Add_Donor.this,android.R.layout.simple_spinner_item,blood_list);
 		blood_grp.setAdapter(blood_);
@@ -157,6 +159,10 @@ public class Add_Donor extends Activity
 		ArrayAdapter<String>city_=new ArrayAdapter<String>(Add_Donor.this,android.R.layout.simple_spinner_item,city_list);
 		location.setAdapter(city_);
 		location.setOnItemSelectedListener(new selected_());
+		
+		ArrayAdapter<String>divs_=new ArrayAdapter<String>(Add_Donor.this,android.R.layout.simple_spinner_item,divs);
+		division.setAdapter(divs_);
+		division.setOnItemSelectedListener(new selected_());
 		
 		add_donor.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v)
@@ -202,6 +208,8 @@ public class Add_Donor extends Activity
     	if(donor_add.equals(""))
     		return false;
     	if(donor_blood.equals("Select Blood Group") || (donor_city.equals("Select City")||donor_city.equals("--Dhaka Division--")||donor_city.equals("--Barisal Division--")||donor_city.equals("--Khulna Division--")||donor_city.equals("--Rajshahi Division--")||donor_city.equals("--Rangpur Division--")|| (donor_city.equals("--Sylhet Division--"))))
+    		return false;
+    	if(donor_div.equals("") || donor_div.equals("Select Division"))
     		return false;
 		
     	return true;
@@ -286,7 +294,7 @@ public class Add_Donor extends Activity
    			try
    			{
    				HttpClient client=new DefaultHttpClient();
-   				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/donor_check.php");
+   				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"donor_check.php");
    				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
    				HttpResponse response=client.execute(httpPost);
    				HttpEntity entity=response.getEntity();
@@ -305,6 +313,10 @@ public class Add_Donor extends Activity
 		 if(arg0.getId()==R.id.donor_blood_grp)
 		  {
 			 donor_blood=blood_grp.getSelectedItem().toString();	 
+		  }
+		  else if(arg0.getId()==R.id.donor_division)
+		  {
+			donor_div=division.getSelectedItem().toString();  
 		  }
 		  else
 		  {
@@ -376,7 +388,7 @@ public class Add_Donor extends Activity
 				}
 				else
 				{
-					Toast.makeText(getApplicationContext(),"REGISTRATION INCOMPLETE",Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(),"Sorry,REGISTRATION INCOMPLETE",Toast.LENGTH_LONG).show();
 				}
 			}
 			catch(Exception e)
@@ -398,11 +410,12 @@ public class Add_Donor extends Activity
 			pairs.add(new BasicNameValuePair("donor_address",donor_add));
 			pairs.add(new BasicNameValuePair("donor_city",donor_city));
 			pairs.add(new BasicNameValuePair("username",bank_username));
+			pairs.add(new BasicNameValuePair("division",donor_div));
 			
 			try
 			{
 				HttpClient client=new DefaultHttpClient();
-				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/donor_registration_andro.php");
+				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"donor_registration_andro.php");
 				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
 				HttpResponse response=client.execute(httpPost);
 				HttpEntity entity=response.getEntity();

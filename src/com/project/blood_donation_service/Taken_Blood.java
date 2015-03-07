@@ -223,12 +223,12 @@ public class Taken_Blood extends Activity
    				if(code==0)
    				{
    					//Toast.makeText(getApplicationContext(),"SORRY,this donor can not donor blood before 3 months.",Toast.LENGTH_LONG).show();
-   				    message.setText("Sorry,this donor can't take blood.");
+   				    message.setText("Sorry,blood bank does not have enough blood.");
    				}
    				else if(code==1)
    				{
    					//Toast.makeText(getApplicationContext(),"SORRY,this donor does exist or registered yet.",Toast.LENGTH_LONG).show();
-   					message.setText("Donor is eligible for taking blood.Blood remaining-"+Integer.toString(remaining));
+   					message.setText("Patient is eligible for taking blood.");
    					donation_complete=1;
    				}
    				
@@ -251,7 +251,7 @@ public class Taken_Blood extends Activity
    			try
    			{
    				HttpClient client=new DefaultHttpClient();
-   				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_patient_after_validation_andro.php");
+   				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"existing_patient_after_validation_andro.php");
    				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
    				HttpResponse response=client.execute(httpPost);
    				HttpEntity entity=response.getEntity();
@@ -341,7 +341,7 @@ public class Taken_Blood extends Activity
    			try
    			{
    				HttpClient client=new DefaultHttpClient();
-   				HttpPost httpPost=new HttpPost("http://192.168.46.1/proj/existing_patient_after_andro.php");
+   				HttpPost httpPost=new HttpPost("http://"+Server_Info.ip_add+"existing_patient_after_andro.php");
    				httpPost.setEntity(new UrlEncodedFormEntity(pairs));
    				HttpResponse response=client.execute(httpPost);
    				HttpEntity entity=response.getEntity();
