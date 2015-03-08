@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/background9">
+    
+    <TextView android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_gravity="center"
+    android:text="Admin Panel"
+    android:gravity="center"
+    android:textSize="30sp"
+    android:background="@drawable/back"
+    android:fontFamily="sans-serif-medium" 
+    android:textStyle="bold"
+    android:layout_marginTop="20dp"
+    android:textColor="#000000"/>
+   
+    <LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    android:orientation="vertical">
+    
+    <Button
+        android:id="@+id/donor_adding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Donor Registration"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/loginrights_buttons"
+        android:textColor="#FFFFFF"
+     />
+    
+    <Button
+        android:id="@+id/patient_adding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Patient Registration"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:background="@drawable/loginrights_buttons"
+        android:textColor="#FFFFFF"
+      />
+
+    <Button
+        android:id="@+id/donating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Existing Donor"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:background="@drawable/loginrights_buttons"
+        android:textColor="#FFFFFF" />
+      <Button
+        android:id="@+id/patient_inq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Existing Patient"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:background="@drawable/loginrights_buttons"
+        android:textColor="#FFFFFF" />
+    <Button
+        android:id="@+id/inquiry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Donor List"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:background="@drawable/loginrights_buttons"
+        android:textColor="#FFFFFF" />
+    
+  
+
+    <Button
+        android:id="@+id/exiting"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textStyle="normal"
+        android:layout_gravity="center"
+        android:background="@drawable/logout_button"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"/>
+    </LinearLayout>
+    
+
+</LinearLayout>

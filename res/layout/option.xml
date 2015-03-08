@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background12">
+   
+    <Button
+        android:id="@+id/donor"
+        android:layout_width="220dp"
+        android:textSize="20sp"
+        android:layout_marginTop="70dp"
+        android:layout_height="100dp"
+        android:background="@drawable/first_option"
+        android:textColor="#FFFFFF"
+        android:text="Find Donor"
+        android:textStyle="bold"
+        
+        android:layout_gravity="center" 
+        />
+
+     <Button
+        android:id="@+id/sign"
+        android:layout_width="220dp"
+        android:textSize="20sp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/first_option"
+        android:textColor="#FFFFFF"
+        android:text="Sign In"
+        android:textStyle="bold"
+        android:layout_gravity="center" 
+        />
+
+   <Button
+        android:id="@+id/exit"
+        android:layout_width="150dp"
+        android:textSize="15sp"
+                android:layout_marginTop="50dp"
+        
+        android:layout_height="40dp"
+        android:background="@drawable/login_button"
+        android:textColor="#FFFFFF"
+        android:text="Exit"
+        android:textStyle="bold"
+        android:layout_gravity="center" 
+        />
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/background8">
+    
+   <TextView android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_gravity="center"
+    android:text="Blood Bank Login"
+    android:gravity="center"
+    android:textSize="30sp"
+    android:background="@drawable/login_back"
+    android:fontFamily="sans-serif-medium" 
+    android:textStyle="bold"
+    android:layout_marginTop="20dp"
+    android:textColor="#000000"/>
+    
+   
+    
+      
+
+            <EditText android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:id="@+id/bank"
+                android:hint="Username"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/login_edittext"
+                android:layout_marginBottom="10dp"/>
+ 
+
+            <EditText android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:id="@+id/password"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/login_edittext"
+                android:hint="Password"
+                android:inputType="textPassword"/>
+      
+       <Button
+        android:id="@+id/log_in"
+        android:layout_width="300dp"
+        android:textSize="20sp"
+        android:layout_height="60dp"
+        android:background="@drawable/login_button"
+        android:textColor="#FFFFFF"
+        android:text="Log in"
+        android:textStyle="bold"
+        android:layout_gravity="center" 
+        />
+    
+
+</LinearLayout>
